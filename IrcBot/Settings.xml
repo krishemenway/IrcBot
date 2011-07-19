@@ -3,7 +3,7 @@
   <Server host="localhost" port="6667" />
   <RealBotName>IrcBot</RealBotName>
   <BotName>IrcBot</BotName>
-  <AdminPass>excite3822!</AdminPass>
+  <AdminPass>password</AdminPass>
   
   <Channel>Integrations</Channel>
   <Channel>HealthPlan</Channel>
