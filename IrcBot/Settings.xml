@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TriviaBotSettings>
+  <Server host="localhost" port="6667" />
+  <RealBotName>IrcBot</RealBotName>
+  <BotName>IrcBot</BotName>
+  <AdminPass>excite3822!</AdminPass>
+  
+  <Channel>Integrations</Channel>
+  <Channel>HealthPlan</Channel>
+  <Channel>TeamTitan</Channel>
+  
+  <Plugins>
+	<Trivia class="IrcBot.Plugins.Trivia.TriviaPlugin" assembly="TriviaPlugin.dll">
+		<WordCorrectness>.66</WordCorrectness>
+		<QuestionSet name="Default">Default.xml</QuestionSet>
+		<QuestionSet name="WebMD">WebMDTrivia.xml</QuestionSet>
+	</Trivia>
+	<Logging class="IrcBot.Plugins.Logging.LoggingPlugin" assembly="LoggingPlugin.dll">
+		<Set name="Extension" value="log" />
+		<Set name="LogPath" value="D:\Logs\" />
+		<Set name="AutoFlush" value="60" />
+	</Logging>
+	<FAQ class="" assembly="">
+	</FAQ>
+  </Plugins>
+</TriviaBotSettings>

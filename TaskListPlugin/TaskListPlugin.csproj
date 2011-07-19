@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4671E85B-D834-41B8-B8F2-0895CA8FE94B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IrcBot.Plugins.TaskList</RootNamespace>
+    <AssemblyName>TaskListPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\NewTaskCommand.cs" />
+    <Compile Include="Commands\ChangeStatusCommand.cs" />
+    <Compile Include="Commands\GetMyTasksCommand.cs" />
+    <Compile Include="Commands\GetTasksForTaskListCommand.cs" />
+    <Compile Include="Commands\NewTaskListCommand.cs" />
+    <Compile Include="Commands\ShowTaskListsCommand.cs" />
+    <Compile Include="Commands\StatusCommand.cs" />
+    <Compile Include="Commands\TakeItemCommand.cs" />
+    <Compile Include="IO\PersistanceHandler.cs" />
+    <Compile Include="IO\XmlPersistance.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TaskList.cs" />
+    <Compile Include="TaskListPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskListRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OpenSourceProjects\SmartIrc4net\VisualStudio\2010\SmartIrc4net.csproj">
+      <Project>{19607F57-B521-4477-9DE0-F0D9B1A68BC7}</Project>
+      <Name>SmartIrc4net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IrcBot\IrcBot.csproj">
+      <Project>{696CCE96-A890-4AF7-B3A3-B5786D7D703C}</Project>
+      <Name>IrcBot</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
